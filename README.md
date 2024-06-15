@@ -7,7 +7,7 @@ npm run setup
 # it will do both composer install and npm install
 
 
-# to run whole application use 
+# to run whole application use ***
 npm run dev 
 # it will run laravel and react both
 
