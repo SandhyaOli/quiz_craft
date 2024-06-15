@@ -65,6 +65,16 @@ class QuestionSeeder extends Seeder
                 ]),
                 'correct_answer' => '2 kJ'
             ],
+            [
+                'question' => 'Who invented mercury barometer?',
+                'options' => json_encode([
+                    'Blaise Pascal',
+                    'Daniel Bernoulli',
+                    'Albert Einstein',
+                    'Evangelista Torricelli'
+                ]),
+                'correct_answer' => 'Evangelista Torricelli'
+            ]
         ];
 
         $chemistryQuestions = [
@@ -117,6 +127,16 @@ class QuestionSeeder extends Seeder
                     '10'
                 ]),
                 'correct_answer' => '10'
+            ],
+            [
+                'question' => 'CO2 When passed in excess, in lime water turns colourless again because of:',
+                'options' => json_encode([
+                    'Calcium Carbonate',
+                    'Calcium bicarbonate',
+                    'Calcium Chloride',
+                    'Copper Carbonate'
+                ]),
+                'correct_answer' => 'Calcium bicarbonate'
             ]
         ];
 
