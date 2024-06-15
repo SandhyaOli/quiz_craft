@@ -19,6 +19,13 @@ npm run build
 npm run preview
 # it will run both laravel and react app
 
+php artisan migrate
+php artisan db:seed
+
+mailtrap setting
+
+
+
 # Yor backend api will run on http://localhost:8000
 # Your frontend react app will run on  http://localhost:5173/
 
