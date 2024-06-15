@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Mail;
 
 class QuestionnaireController extends Controller
 {
+    // Create questionnaire
     public function generate(Request $request)
     {
         $request->validate([
@@ -34,12 +35,14 @@ class QuestionnaireController extends Controller
         ], 201);
     }
 
+    // Get active questionnaires list
     public function active()
     {
         $activeQuestionnaires = Questionnaire::where('expiry_date', '>=', now())->get();
         return response()->json($activeQuestionnaires);
     }
 
+    // send email invitation to students
     public function sendInvitations(Questionnaire $questionnaire)
     {
         $students = Student::all();
@@ -61,7 +64,7 @@ class QuestionnaireController extends Controller
         }
     }
 
-
+    // Show questions list to student to participate in test
     public function show(Questionnaire $questionnaire, Student $student)
     {
         if ($questionnaire->expiry_date < now()) {

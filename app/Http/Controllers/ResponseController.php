@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class ResponseController extends Controller
 {
+    // Store reponses for questionnaire
     public function store(Request $request)
     {
         $request->validate([
@@ -24,7 +25,6 @@ class ResponseController extends Controller
                 'answer' => $answer,
             ]);
         }
-
         return response()->json(['message' => 'Responses submitted successfully'], 200);
     }
 }
