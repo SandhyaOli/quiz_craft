@@ -74,6 +74,7 @@ const Questionnaire = () => {
                         ))}
                     </div>
                 ))}
+                <br/>
                 <button type="submit">Submit</button>
             </form>
         </div>

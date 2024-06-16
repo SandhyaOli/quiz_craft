@@ -22,7 +22,6 @@ function App() {
           <Route path='/questionnaire/:questionnaireid/student/:studentid' element={<Questionnaire />} >
           </Route>
         </Routes>
-
       </Router>
     </>
   )

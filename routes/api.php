@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/welcome', function () {
-    return response()->json(['message' => 'Hello!'], 200);
+    return response()->json(['message' => 'Welcome!'], 200);
 });
 
 Route::post('/questionnaires/generate', [QuestionnaireController::class, 'generate']);
