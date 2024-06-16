@@ -4,12 +4,16 @@ import { useNavigate } from 'react-router-dom'
 
 const CreateQuestionnaire = () => {
     const navigate = useNavigate()
+    // State to hold the form submission message
     const [message, setMessage] = useState('')
+
+    // State to hold the form data
     const [formData, setFormData] = useState({
         title: "",
         expiry_date: new Date().toISOString().split('T')[0]
     })
 
+    // Handler for form input changes
     const onchange = (e) => {
         setFormData((prevState) => ({
             ...prevState,
@@ -17,19 +21,25 @@ const CreateQuestionnaire = () => {
         }))
     }
 
+    // Handler for form submission
     const onFormSubmit = (e) => {
         e.preventDefault()
 
         axios.post('/api/questionnaires/generate', formData).then(() =>
+            // Set success message
             setMessage("Form submitted successfully"),
+
+            // Navigate to active questionnaires page
             navigate('/active-questionnaire')
         ).catch((err) => {
+            // Set error message
             setMessage("Error occurred")
         })
     }
 
     return (
         <div>
+            {/* Display the submission message */}
             {message}
             <form onSubmit={onFormSubmit}>
                 <label htmlFor="title">Title:</label>
